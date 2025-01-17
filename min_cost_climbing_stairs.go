@@ -79,8 +79,8 @@ func minCostClimbingStairs(cost []int) int {
 	return dp[len(dp)-1]
 }
 
-func main() {
-	op := minCostClimbingStairs([]int{1, 2, 1, 2, 1, 1, 1})
-	// op := climbingStairs2(50)
-	fmt.Println(op)
-}
+// func main() {
+// 	op := minCostClimbingStairs([]int{1, 2, 1, 2, 1, 1, 1})
+// 	// op := climbingStairs2(50)
+// 	fmt.Println(op)
+// }
