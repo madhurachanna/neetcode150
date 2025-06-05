@@ -33,16 +33,17 @@ Constraints:
 piles.length <= h <= 1,000,000
 1 <= piles[i] <= 1,000,000,000
 """
+
 import math
 
 
 # O(mx*piles)
-def min_eating_speed_2 (piles, h):
+def min_eating_speed_2(piles, h):
     mx = max(piles)
     for k in range(1, mx + 1):
         hrs = 0
         for p in piles:
-            hrs += math.ceil(p/k)
+            hrs += math.ceil(p / k)
         if hrs <= h:
             return k
 
@@ -55,12 +56,12 @@ def min_eating_speed(piles, h):
     j = mx
     k = mx
     while i <= j:
-        m = i + (j -i) // 2
+        m = i + (j - i) // 2
         hrs = 0
 
         for p in piles:
             # Using ceil because we cannot switch to differnet pile in the same hour
-            hrs += math.ceil(p/m)
+            hrs += math.ceil(p / m)
 
         if hrs <= h:
             k = min(k, m)
@@ -71,7 +72,7 @@ def min_eating_speed(piles, h):
     return k
 
 
-piles = [1,4,3,2]
+piles = [1, 4, 3, 2]
 h = 9
 op = min_eating_speed(piles, h)
 print(op)
